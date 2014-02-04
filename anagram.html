@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Anagram</title>
+
+<script type="text/javascript">
+
+	var strings=['cat', 'silent', 'listen', 'reactive'];
+
+	var anagrams = function(strings) {
+		var sorted_strings = [];
+		var num_anagrams = 0;
+			for (var i = 0 ; i < strings.length ; i++) {
+				var sorted = strings[i].split('').sort().join('');
+				sorted_strings.push(sorted);
+				//console.log(sorted_strings);
+			}
+			for (var j = 0 ; j < sorted_strings.length ; j++) {
+				for (var k = 0 ; k < sorted_strings.length ; k++) {
+					console.log(sorted_strings[j]);
+					console.log(k);
+					if (sorted_strings[j] === sorted_strings[k] && j!==k) {
+						num_anagrams += 1;
+					}
+				}
+			}
+	return num_anagrams;
+	}
+
+	alert(anagrams(strings));
+
+</script>
+
+</head>
+<body>
+
+
+</body>
+</html>
